@@ -14,7 +14,7 @@ module.exports.createQuestion = function (req, res) {
             console.log("error in creating report ", err);
             return;
         }
-
+        question.save();
         return res.json(200 , {
             data:{
                 question: question
@@ -44,11 +44,11 @@ module.exports.list = function(req,res){
 //this  will show the questions filtered by text
 module.exports.filtered = async function(req, res) {
 
-    let searchQuestion = await Question.find({Tags:req.params.Tags});
+    let searchQuestion = await Question.find({Tags: req.params.Tags});
 
     return res.json(200, {
         message: "Filtered Questions",
-        searchQuestion:searchQuestion
+        searchQuestion : searchQuestion
     });
 }
 
