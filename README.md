@@ -6,6 +6,7 @@ Express
 Mongoose
 
 # Installation:
+Clone repository: https://github.com/Anshul-Garg-15/Question-Bank-API
 Install dependencies: npm install
 
 Run the server: npm start
