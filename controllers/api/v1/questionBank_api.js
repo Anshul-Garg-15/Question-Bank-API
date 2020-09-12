@@ -1,4 +1,3 @@
-
 const Question = require('../../../model/questionBank');
 
 //this will create the question
@@ -26,13 +25,13 @@ module.exports.createQuestion = function (req, res) {
 
     });
 
-      
+}
 //this will show all the questions of the question bank 
 module.exports.list = function(req,res){
 
     
-        Question.find({},function(err,questions){
-            return res.json(200,{
+        Question.find({}, function(err,questions){
+            return res.json(200, {
                 message: "List of Questions",
                 questions: questions               
             });
@@ -43,14 +42,13 @@ module.exports.list = function(req,res){
 
 
 //this  will show the questions filtered by text
-module.exports.status = async function (req, res) {
+module.exports.filtered = async function(req, res) {
 
-    let searchQuestion = await Question.find({ Tags: req.params.Tags });
+    let searchQuestion = await Question.find({Tags:req.params.Tags});
 
     return res.json(200, {
         message: "Filtered Questions",
-        searchQuestion: searchQuestion
+        searchQuestion:searchQuestion
     });
 }
 
-}

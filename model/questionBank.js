@@ -7,14 +7,14 @@ const questionSchema = mongoose.Schema({
     },
     Topic:{
         type:String,
-        required:true,
-        enum: ['qualifying-criteria' , 'top-colleges']
+        required:true
+        // enum: ['qualifying-criteria' , 'top-colleges']
     },
-    Tags: [{
+    Tags: {
         type:String,
-        required:true,
-        enum:['usa', 'engineering' , 'top' , 'admission' , 'standford-university']
-    }],
+        required:true
+        // enum:['usa', 'engineering' , 'top' , 'admission' , 'standford-university']
+    },
 },{
     timestamps:true
 });
